@@ -51,6 +51,9 @@ MonoBehaviour:
   moveSpeed: 4
   health: 1
   explosionPrefab: {fileID: 2607019552219710419, guid: fedce06c28c3093489335f65cd1cf604, type: 3}
+  healthPickupPrefab: {fileID: 4247296438215200153, guid: ec62027c873850a45ba259ea67781513, type: 3}
+  dropChance: 0.2
+  scoreValue: 10
   spawnRate: 0
   enemyBullet: {fileID: 7121663629645410587, guid: 42bf3f5a61a45264ca55082ecc826fdd, type: 3}
 --- !u!50 &84047917323845601

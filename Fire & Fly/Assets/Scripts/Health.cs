@@ -39,11 +39,29 @@ public class Health : MonoBehaviour
             heart.transform.localPosition = new Vector3(i * heartSpacing, 0f, 0f);
         }
     }
+    //public void UpdateHealthUI(int currentHealth)
+    //{
+    //    for (int i = 0; i < hearts.Count; i++)
+    //    {
+    //        hearts[i].SetActive(i < currentHealth);
+    //    }
+    //}
     public void UpdateHealthUI(int currentHealth)
     {
         for (int i = 0; i < hearts.Count; i++)
         {
             hearts[i].SetActive(i < currentHealth);
         }
+    }
+
+
+    public void RestoreHealth(int amount)
+    {
+        int currentHealth = hearts.Count;
+        int maxHealth = 5;
+
+        currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
+        UpdateHealthUI(currentHealth);
+        Debug.Log("Player health restored. Current health: " + currentHealth);
     }
 }

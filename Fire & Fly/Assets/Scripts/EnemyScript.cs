@@ -8,6 +8,10 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] int health = 1;
     [SerializeField] GameObject explosionPrefab;
     private SoundScript soundScript;
+
+
+    public GameObject healthPickupPrefab;  // Assign this in Inspector
+    [Range(0f, 1f)] public float dropChance = 0.2f;
     void Update()
     {
         transform.Translate(-moveSpeed * Time.deltaTime, 0f, 0f);
@@ -89,13 +93,39 @@ public class EnemyScript : MonoBehaviour
         {
             ScoreManager.Instance.AddScore(scoreValue);
         }
-    }
+    }  
+    //private void OnDeath()
+    //{
+    //    if (soundScript != null)
+    //    {
+    //        soundScript.PlayExplosionSound(); // Play explosion sound when enemy dies
+    //    }
+    //    Destroy(gameObject);
+    //}
+    //private void OnDeath()
+    //{
+    //    //if (Random.value < dropChance)  // Random chance (10-20%)
+    //    //{
+    //    //    Instantiate(healthPickupPrefab, transform.position, Quaternion.identity);
+    //    //}
+
+    //    //Destroy(gameObject);  // Destroy the enemy
+
+
+    //}
     private void OnDeath()
     {
-        if (soundScript != null)
+        Debug.Log("OnDeath() called for " + gameObject.name);
+
+        if (Random.value < dropChance)  // Random chance
         {
-            soundScript.PlayExplosionSound(); // Play explosion sound when enemy dies
+            Debug.Log("Health pickup dropped at: " + transform.position);
+            Instantiate(healthPickupPrefab, transform.position, Quaternion.identity);
         }
-        Destroy(gameObject);
+
+        Destroy(gameObject);  // Destroy the enemy
     }
+
+
+
 }
