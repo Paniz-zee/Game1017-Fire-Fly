@@ -921,7 +921,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 8541550392319511270, guid: 26e34d94b9428b6439953e37a65b5675, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1337,7 +1337,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 8541550392319511270, guid: 26e34d94b9428b6439953e37a65b5675, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2558,8 +2558,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   optionsPanel: {fileID: 189028650}
-  musicSlider: {fileID: 1665996487}
-  sfxSlider: {fileID: 342363307}
+  pauseButton: {fileID: 0}
+  optionsButton: {fileID: 0}
+  pauseBtnTxt: {fileID: 0}
 --- !u!4 &2076835334
 Transform:
   m_ObjectHideFlags: 0

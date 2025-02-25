@@ -1,23 +1,40 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
     public GameObject optionsPanel;
-    public Slider musicSlider;
-    public Slider sfxSlider;
+    public Button pauseButton;
+    public Button optionsButton;
+    private bool isGamePaused = false;
+    [SerializeField] TMP_Text pauseBtnTxt;
 
-    private void Start()
+    void Start()
     {
+        optionsButton.onClick.AddListener(ToggleOptions);
+        pauseButton.onClick.AddListener(TogglePause);
         optionsPanel.SetActive(false);
-        musicSlider.onValueChanged.AddListener(MainController.Instance.SoundManager.SetMusicVolume);
-        sfxSlider.onValueChanged.AddListener(MainController.Instance.SoundManager.SetSFXVolume);
     }
 
     public void ToggleOptions()
     {
-        bool isActive = !optionsPanel.activeSelf;
-        optionsPanel.SetActive(isActive);
-        Time.timeScale = isActive ? 0f : 1f;
+        optionsPanel.SetActive(!optionsPanel.activeSelf);
+    }
+
+    public void TogglePause()
+    {
+       
+        
+
+
+            isGamePaused = !isGamePaused;
+            Time.timeScale = isGamePaused ? 0 : 1;
+        pauseBtnTxt.text = isGamePaused ? "Resume" : "Pause";
+        pauseButton.GetComponentInChildren<TextMeshPro>().text = isGamePaused ? "Resume" : "Pause";
+
+            Debug.Log(isGamePaused ? "Game Paused!" : "Game Resumed!");
+        
     }
 }
+
