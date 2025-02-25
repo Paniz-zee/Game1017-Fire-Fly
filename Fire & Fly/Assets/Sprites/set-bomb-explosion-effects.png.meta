@@ -180,6 +180,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -802,7 +815,36 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      set-bomb-explosion-effects_0: 1443753995682417441
+      set-bomb-explosion-effects_1: -4416893092982203104
+      set-bomb-explosion-effects_10: 1520590182377351888
+      set-bomb-explosion-effects_11: -8224719276044463606
+      set-bomb-explosion-effects_12: 7558939150043489230
+      set-bomb-explosion-effects_13: 286706199460755724
+      set-bomb-explosion-effects_14: -7097483334930202840
+      set-bomb-explosion-effects_15: 8562879876551513380
+      set-bomb-explosion-effects_16: -3397829950488616411
+      set-bomb-explosion-effects_17: 7728051335487860200
+      set-bomb-explosion-effects_18: -497474079574194381
+      set-bomb-explosion-effects_19: -601847669948167569
+      set-bomb-explosion-effects_2: -6480459213870934937
+      set-bomb-explosion-effects_20: 7688857794354221505
+      set-bomb-explosion-effects_21: -1205196519270668465
+      set-bomb-explosion-effects_22: -6099972895554895833
+      set-bomb-explosion-effects_23: 2939089868636832440
+      set-bomb-explosion-effects_24: 6129264536123990849
+      set-bomb-explosion-effects_25: 3796709466498823743
+      set-bomb-explosion-effects_26: 6638047787834820657
+      set-bomb-explosion-effects_27: 6562858608808174929
+      set-bomb-explosion-effects_28: -4125669195091209377
+      set-bomb-explosion-effects_3: -7095235203076202119
+      set-bomb-explosion-effects_4: 3090408631623042321
+      set-bomb-explosion-effects_5: 7711344830364078574
+      set-bomb-explosion-effects_6: 4008985898773654796
+      set-bomb-explosion-effects_7: -722353953037333738
+      set-bomb-explosion-effects_8: -6229660978946552339
+      set-bomb-explosion-effects_9: 4712932727972043528
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
