@@ -1,21 +1,23 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameOverManager : MonoBehaviour
 {
-    public GameObject gameOverUI;  // Reference to the Game Over UI
-    public TMP_Text gameOverText;  // Reference to the TMP_Text component for the Game Over message
+    public GameObject gameOverUI;
+    public TMP_Text gameOverText;
 
     void Start()
     {
-        gameOverUI.SetActive(false);  // Hide Game Over UI at the start
+        gameOverUI.SetActive(false);
     }
 
     // Method to show the Game Over UI
     public void ShowGameOver()
     {
-        gameOverUI.SetActive(true);  // Show the Game Over UI
-        gameOverText.text = "Game Over!";  // Update the text to show "Game Over!"
+        SceneManager.LoadScene("GameOverScene");
+        //gameOverUI.SetActive(true);
+        //gameOverText.text = "Game Over!";
     }
 
     // Restart the game

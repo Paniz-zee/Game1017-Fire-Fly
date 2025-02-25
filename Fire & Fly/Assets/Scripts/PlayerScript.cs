@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class PlayerScript : MonoBehaviour
 {
     [SerializeField] float moveSpeed;
@@ -101,6 +102,7 @@ public class PlayerScript : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            SceneManager.LoadScene("GameOverScene");
             gameOverManager.ShowGameOver();
             // If health is 0 or below, destroy the player
             Instantiate(playerExplosionPrefab, transform.position, Quaternion.identity);
