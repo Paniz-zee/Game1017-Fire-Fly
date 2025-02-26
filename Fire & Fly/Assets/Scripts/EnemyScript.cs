@@ -10,8 +10,9 @@ public class EnemyScript : MonoBehaviour
     private SoundScript soundScript;
 
 
-    public GameObject healthPickupPrefab;  // Assign this in Inspector
-    [Range(0f, 1f)] public float dropChance = 0.2f;
+    public GameObject healthPickupPrefab;
+    [Range(0f, 1f)]
+    public float dropChance = 0.2f;
     void Update()
     {
         transform.Translate(-moveSpeed * Time.deltaTime, 0f, 0f);
@@ -21,8 +22,9 @@ public class EnemyScript : MonoBehaviour
         }
         if (health <= 0)
         {
-            OnDeath(); // Call OnDeath when health is 0
+            OnDeath(); 
         }
+       
     }
     [SerializeField] int scoreValue = 10;
     [SerializeField] float spawnRate;
@@ -63,13 +65,28 @@ public class EnemyScript : MonoBehaviour
             Destroy(gameObject); // Destroy the enemy
 
         }
+        //else if (collision.CompareTag("Bullet"))
+        //{
+        //    // Destroy the bullet and the enemy
+        //    Destroy(collision.gameObject); // Destroy the bullet
+        //    Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        //    Destroy(gameObject); // Destroy the enemy
+        //    soundScript.PlayExplosionSound();
+        //}
         else if (collision.CompareTag("Bullet"))
         {
-            // Destroy the bullet and the enemy
             Destroy(collision.gameObject); // Destroy the bullet
-            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-            Destroy(gameObject); // Destroy the enemy
-            soundScript.PlayExplosionSound();
+
+            health--; // Reduce enemy health
+            Debug.Log(gameObject.name + " took damage! Current health: " + health);
+
+            if (health <= 0)
+            {
+                Debug.Log(gameObject.name + " died!");
+                OnDeath();
+                soundScript.PlayExplosionSound();
+            }
+
         }
 
     }
@@ -93,7 +110,7 @@ public class EnemyScript : MonoBehaviour
         {
             ScoreManager.Instance.AddScore(scoreValue);
         }
-    }  
+    }
     //private void OnDeath()
     //{
     //    if (soundScript != null)
@@ -119,12 +136,22 @@ public class EnemyScript : MonoBehaviour
 
         if (Random.value < dropChance)  // Random chance
         {
-            Debug.Log("Health pickup dropped at: " + transform.position);
-            Instantiate(healthPickupPrefab, transform.position, Quaternion.identity);
+            Debug.Log("Health pickup should spawn at: " + transform.position);
+
+            if (healthPickupPrefab != null)
+            {
+                Instantiate(healthPickupPrefab, transform.position, Quaternion.identity);
+                Debug.Log("Health pickup instantiated!");
+            }
+            else
+            {
+                Debug.LogError("healthPickupPrefab is NULL! Assign it in the Inspector.");
+            }
         }
 
         Destroy(gameObject);  // Destroy the enemy
     }
+
 
 
 

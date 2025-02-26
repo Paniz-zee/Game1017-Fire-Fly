@@ -53,8 +53,6 @@ public class Health : MonoBehaviour
             hearts[i].SetActive(i < currentHealth);
         }
     }
-
-
     public void RestoreHealth(int amount)
     {
         int currentHealth = hearts.Count;
@@ -64,4 +62,6 @@ public class Health : MonoBehaviour
         UpdateHealthUI(currentHealth);
         Debug.Log("Player health restored. Current health: " + currentHealth);
     }
+
+    
 }

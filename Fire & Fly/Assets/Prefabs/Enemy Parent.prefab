@@ -51,7 +51,7 @@ MonoBehaviour:
   moveSpeed: 4
   health: 1
   explosionPrefab: {fileID: 2607019552219710419, guid: fedce06c28c3093489335f65cd1cf604, type: 3}
-  healthPickupPrefab: {fileID: 4247296438215200153, guid: ec62027c873850a45ba259ea67781513, type: 3}
+  healthPickupPrefab: {fileID: 6204805590585117581, guid: ec62027c873850a45ba259ea67781513, type: 3}
   dropChance: 0.2
   scoreValue: 10
   spawnRate: 0
