@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public GameObject optionsPanel;
-    public Button pauseButton;
+    //public Button pauseButton;
     public Button optionsButton;
     private bool isGamePaused = false;
     [SerializeField] TMP_Text pauseBtnTxt;
@@ -13,28 +13,35 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         optionsButton.onClick.AddListener(ToggleOptions);
-        pauseButton.onClick.AddListener(TogglePause);
+        //pauseButton.onClick.AddListener(TogglePause);
         optionsPanel.SetActive(false);
+        
     }
 
     public void ToggleOptions()
     {
         optionsPanel.SetActive(!optionsPanel.activeSelf);
+        isGamePaused = !isGamePaused;
+        Time.timeScale = isGamePaused ? 0 : 1;
+        pauseBtnTxt.text = "Paused";
+        //pauseButton.GetComponentInChildren<TextMeshPro>().text = isGamePaused ? "Resume" : "Pause";
+
+        Debug.Log(isGamePaused ? "Game Paused!" : "Game Resumed!");
     }
 
-    public void TogglePause()
-    {
+    //public void TogglePause()
+    //{
        
         
 
 
-            isGamePaused = !isGamePaused;
-            Time.timeScale = isGamePaused ? 0 : 1;
-        pauseBtnTxt.text = isGamePaused ? "Resume" : "Pause";
-        pauseButton.GetComponentInChildren<TextMeshPro>().text = isGamePaused ? "Resume" : "Pause";
+    //        isGamePaused = !isGamePaused;
+    //        Time.timeScale = isGamePaused ? 0 : 1;
+    //    pauseBtnTxt.text = isGamePaused ? "Resume" : "Pause";
+    //    pauseButton.GetComponentInChildren<TextMeshPro>().text = isGamePaused ? "Resume" : "Pause";
 
-            Debug.Log(isGamePaused ? "Game Paused!" : "Game Resumed!");
+    //        Debug.Log(isGamePaused ? "Game Paused!" : "Game Resumed!");
         
-    }
+    //}
 }
 

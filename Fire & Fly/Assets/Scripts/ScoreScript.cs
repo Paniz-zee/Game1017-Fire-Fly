@@ -72,6 +72,9 @@ public class ScoreManager : MonoBehaviour
     {
         score = 0;
         UpdateScoreUI();
+       
     }
+   
+
 }
 
